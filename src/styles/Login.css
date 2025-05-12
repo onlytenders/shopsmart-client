@@ -1,0 +1,209 @@
+/* Login styles */
+/* Сброс дефолтных стилей FontAwesome */
+i.fas,
+i.far,
+i.fab {
+    color: inherit !important;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #F7FAFC;
+    /* Light Minty, from ShoppingList */
+    font-family: "Inter", sans-serif;
+}
+
+.login-form {
+    max-width: 400px;
+    width: 100%;
+    padding: 30px;
+    background: #E6F7FA;
+    /* Minty, from ShoppingList */
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.login-logo {
+    font-size: 28px;
+    font-weight: 600;
+    color: #2D3748;
+    /* Dark gray, from ShoppingList */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.login-logo i {
+    font-size: 24px;
+    color: #FF8C38 !important;
+    /* Mango, from ShoppingList */
+}
+
+.login-form h1 {
+    font-size: 24px;
+    color: #2D3748;
+    /* Dark gray, from ShoppingList */
+    margin-bottom: 20px;
+}
+
+.error {
+    background: #FF6B6B !important;
+    /* Coral, from ShoppingList */
+    color: #FFFFFF !important;
+    padding: 12px 20px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    animation: slideIn 0.3s ease, fadeOut 0.3s ease 2.7s forwards;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+    animation: slideIn 0.3s ease;
+}
+
+.input-group i {
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    transform: translateY(-50%);
+    color: #A0AEC0 !important;
+    /* Gray, from ShoppingList */
+    font-size: 16px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px 12px 40px;
+    border: 1px solid #A0AEC0;
+    /* Gray, from ShoppingList */
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    background: #FFFFFF;
+    /* White, from ShoppingList */
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #FF8C38;
+    /* Mango, from ShoppingList */
+}
+
+.button-primary {
+    width: 100%;
+    padding: 12px;
+    background: #FF8C38 !important;
+    /* Mango, from ShoppingList */
+    color: #FFFFFF !important;
+    border: none !important;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.button-primary i {
+    color: #FFFFFF !important;
+}
+
+.button-primary:hover {
+    background: #FF6B6B !important;
+    /* Coral, from ShoppingList */
+    transform: translateY(-2px);
+}
+
+.button-primary:active {
+    animation: pulse 0.2s ease;
+}
+
+.login-form p {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #2D3748;
+    /* Dark gray, from ShoppingList */
+}
+
+.link {
+    color: #FF8C38 !important;
+    /* Mango, from ShoppingList */
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: #FF6B6B !important;
+    /* Coral, from ShoppingList */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.95);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 600px) {
+    .login-form {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .login-logo {
+        font-size: 24px;
+    }
+
+    .login-form h1 {
+        font-size: 20px;
+    }
+}

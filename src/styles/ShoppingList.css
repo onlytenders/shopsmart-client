@@ -1,0 +1,315 @@
+/* Общий стиль для всей страницы */
+.shopping-list {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #E6F7FA; /* Мятный фон */
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    font-family: 'Inter', sans-serif; /* Современный шрифт */
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  /* Анимация появления страницы */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Заголовок списка */
+  .shopping-list h2 {
+    font-size: 2.2rem;
+    color: #2D3748; /* Тёмно-синий */
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Поле для редактирования названия */
+  .list-name-input {
+    font-size: 2rem;
+    color: #2D3748;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #FF8C38; /* Манговый акцент */
+    padding: 8px;
+    width: 100%;
+    text-align: center;
+    transition: border-color 0.3s ease;
+  }
+  
+  .list-name-input:focus {
+    outline: none;
+    border-color: #FF6B6B; /* Коралловый при фокусе */
+  }
+  
+  /* Уведомления */
+  .notification {
+    background: #FF6B6B; /* Коралловый */
+    color: white;
+    padding: 12px 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 500;
+    animation: slideIn 0.3s ease, fadeOut 0.3s ease 2.7s forwards; /* Исчезает через 2.7с */
+  }
+  
+  /* Анимация появления уведомления */
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes fadeOut {
+    to { opacity: 0; }
+  }
+  
+  /* Поле ввода и кнопка добавления */
+  .input-group {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  .input-group input {
+    flex: 1;
+    padding: 12px;
+    font-size: 1.1rem;
+    border: 2px solid #E2E8F0; /* Светло-серая рамка */
+    border-radius: 10px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .input-group input:focus {
+    outline: none;
+    border-color: #FF8C38;
+    box-shadow: 0 0 8px rgba(255, 140, 56, 0.3);
+  }
+  
+  .input-group button {
+    padding: 12px 24px;
+    background: #FF8C38; /* Манговый */
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .input-group button:hover {
+    background: #FF6B6B; /* Коралловый */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+  }
+  
+  .input-group button:active {
+    transform: translateY(0);
+  }
+  
+  /* Список элементов */
+  .item-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+  }
+  
+  .item-list li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+  }
+  
+  .item-list li:hover {
+    transform: translateX(5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Чекбоксы */
+  .item-list input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #FF8C38;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.3s ease;
+  }
+  
+  .item-list input[type="checkbox"]:checked {
+    background: #FF8C38;
+    border-color: #FF8C38;
+  }
+  
+  .item-list input[type="checkbox"]:checked::after {
+    content: "✔";
+    color: white;
+    font-size: 14px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  /* Анимация вычеркивания */
+  .item-list li.completed {
+    color: #A0AEC0; /* Серо-голубой */
+    text-decoration: line-through;
+    animation: strikeThrough 0.5s ease;
+  }
+  
+  @keyframes strikeThrough {
+    from { text-decoration: none; }
+    to { text-decoration: line-through; }
+  }
+  
+  /* Кнопка "Удалить отмеченные" */
+  button.delete-completed {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background: #FF6B6B; /* Коралловый */
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    margin: 20px 0;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  button.delete-completed:hover {
+    background: #FF8C38; /* Манговый */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 140, 56, 0.3);
+  }
+  
+  button.delete-completed:disabled {
+    background: #E2E8F0; /* Серый */
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+  
+  /* Заголовок участников */
+  .shopping-list h3 {
+    font-size: 1.6rem;
+    color: #2D3748;
+    margin: 30px 0 15px;
+  }
+  
+  /* Список участников */
+  .member-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .member-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+  }
+  
+  .member-list li:hover {
+    transform: translateX(5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  .member-list li button {
+    padding: 8px 16px;
+    background: #FF6B6B; /* Коралловый */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .member-list li button:hover {
+    background: #FF8C38; /* Манговый */
+    transform: translateY(-2px);
+  }
+  
+  /* Кнопки действий */
+  .action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 30px 0;
+    justify-content: center;
+  }
+  
+  .action-buttons button {
+    padding: 12px 24px;
+    background: #FF8C38; /* Манговый */
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .action-buttons button:hover {
+    background: #FF6B6B; /* Коралловый */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+  }
+  
+  .action-buttons button:active {
+    transform: translateY(0);
+  }
+  
+  /* Владелец */
+  .shopping-list p {
+    text-align: center;
+    color: #2D3748;
+    font-size: 1.1rem;
+    margin-top: 20px;
+  }
+  
+  /* Адаптивность */
+  @media (max-width: 600px) {
+    .shopping-list {
+      margin: 20px;
+      padding: 20px;
+    }
+  
+    .shopping-list h2,
+    .list-name-input {
+      font-size: 1.8rem;
+    }
+  
+    .input-group {
+      flex-direction: column;
+    }
+  
+    .input-group button {
+      width: 100%;
+    }
+  
+    .action-buttons {
+      flex-direction: column;
+    }
+  
+    .action-buttons button {
+      width: 100%;
+    }
+  }

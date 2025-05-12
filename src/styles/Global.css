@@ -1,0 +1,118 @@
+:root {
+    --mint-bg: #E6F7FA;
+    --mango: #FF8C38;
+    --coral: #FF6B6B;
+    --dark-gray: #2D3748;
+    --light-gray: #A0AEC0;
+    --white: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--mint-bg);
+    color: var(--dark-gray);
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 600;
+    color: var(--dark-gray);
+}
+
+button {
+    padding: 12px 24px;
+    background: var(--mango);
+    color: var(--white);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: var(--coral);
+    transform: translateY(-2px);
+}
+
+button:active {
+    animation: pulse 0.2s ease;
+}
+
+input,
+select {
+    padding: 12px;
+    border: 1px solid var(--light-gray);
+    border-radius: 8px;
+    font-size: 16px;
+    width: 100%;
+    transition: border-color 0.3s ease;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: var(--mango);
+}
+
+.notification {
+    background: var(--coral);
+    color: var(--white);
+    padding: 12px 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+    text-align: center;
+    animation: slideIn 0.3s ease, fadeOut 0.3s ease 2.7s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.95);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
